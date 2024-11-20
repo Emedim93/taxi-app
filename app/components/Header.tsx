@@ -11,8 +11,8 @@ return (
 
         <ul className="hidden md:flex items-center gap-4">
             <li className="text-yellow-500 font-bold cursor-pointer">Home</li>
-            <li className="text-[#333] font-bold cursor-pointer hover:text-yellow-500">Home</li>
-            <li className="text-[#333] font-bold cursor-pointer hover:text-yellow-500">Home</li>
+            <li className="text-[#333] font-bold cursor-pointer hover:text-yellow-500">Courses</li>
+            <li className="text-[#333] font-bold cursor-pointer hover:text-yellow-500">Help</li>
         </ul> 
         </div>
     </header>
