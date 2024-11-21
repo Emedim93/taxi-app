@@ -1,8 +1,33 @@
-import React from 'react'
+"use client"
+import {useState} from "react"
+import Car01 from "../../public/car-01.png"
+import Car02 from "../../public/car-02.png"
+import Car03 from "../../public/car-03.png"
+import Car04 from "../../public/car-04.png"
+import Image from "next/image"
 
 export default function CarOptions() {
+
+  const [activeIndex, setActiveIndex] = useState<any>()
+
+  const options = [
+    {name: "Economique", image: Car01, prix: "21.50"},
+    {name: "Confort", image: Car02, prix: "39.02"},
+    {name: "Electrique", image: Car03, prix: "45.29"},
+    {name: "Minivan", image: Car04, prix: "37.77"},
+  ]
+
+
   return (
-    <div>
+    <div className="grid grid-cols-2 lg:grid-cols-3 xl-grid-cols-4 gap-2">
+     {options.map((item, index)=> (
+      <div key={index} className={`border border-gray-200 p-2 rounded-md flex flex-col justify-center item-center gap-1 cursor-pointer hover:border-yellow-400 hover:scale-110 transition-all ${activeIndex === index ? 'border-yellow-400 border-[2px]' : null}`} onClick={() => setActiveIndex (index)}>
+        <Image width={80} alt="image" src={item.image} />
+        <p className="text-sm">{item.name}</p>
+        <p className="text-sm font-bold">{item.prix}€</p>
+
+      </div>
+     ))}  
       
     </div>
   )
